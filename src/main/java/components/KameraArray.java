@@ -1,12 +1,13 @@
 package components;
 
-import java.util.SortedSet;
-import java.util.TreeSet;
+
+import java.util.ArrayList;
 
 
-public class KameraTree {
 
-	private final SortedSet<Kamera> rememberedCameras = new TreeSet<Kamera>();
+public class KameraArray {
+
+	public final ArrayList<Kamera> rememberedCameras = new ArrayList<Kamera>();
 	
 	private final Kamera nikonD3000 = new Kamera();
 	private final Kamera nikonD3100 = new Kamera("Nikon", "D3100", 454, 14.2, "CMOS", 322);
@@ -21,10 +22,11 @@ public class KameraTree {
 	private final Kamera nikonD3s = new Kamera("Nikon", "D3s", 1240, 12.1, "CMOS", 4740);
 	private final Kamera nikonD3x = new Kamera("Nikon", "D3x", 1200, 24.5, "CMOS", 7700);
 	private final Kamera nikonD4 = new Kamera("Nikon", "D4", 1340, 16.2, "CMOS", 4633);
+	private final Kamera canonEOS5DMarkIII = new Kamera("Canon", "EOS 5D Mark III", 1300, 22.3, "CMOS", 5000);
 	
 	
 	
-	public KameraTree(){
+	public KameraArray(){
 		
 		rememberedCameras.add(nikonD3000);
 		rememberedCameras.add(nikonD3100);
@@ -39,12 +41,25 @@ public class KameraTree {
 		rememberedCameras.add(nikonD3s);
 		rememberedCameras.add(nikonD3x);
 		rememberedCameras.add(nikonD4);
+		rememberedCameras.add(canonEOS5DMarkIII);
 		
 		
 	}
 	
-	public SortedSet<Kamera> getTree(){
+	public ArrayList<Kamera> getArray(){
 		return rememberedCameras;
+	}
+	
+	public String toButtonString(String marke){
+		String buttonString = "";
+		
+		for(int i=0; i<rememberedCameras.size(); i++){
+			if(rememberedCameras.get(i).marke.equals(marke)){
+				buttonString += "<a>" + rememberedCameras.get(i).modell + "</a><br/>";
+			}
+		}
+		
+		return buttonString;
 	}
 	
 	

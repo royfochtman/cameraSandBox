@@ -4,7 +4,7 @@ package components;
  * @author Roy Fochtman
  *
  */
-public class Kamera {
+public class Kamera implements Comparable<Kamera>{
 	
 	String marke;
 	String modell;
@@ -57,6 +57,12 @@ public class Kamera {
 	
 	public String toString(){
 		return this.marke + " " + this.modell;
+	}
+
+	@Override
+	public int compareTo(Kamera compareCamera) {
+		
+		return this.preis - compareCamera.preis;
 	}
 	
 }

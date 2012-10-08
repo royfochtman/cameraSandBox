@@ -29,9 +29,10 @@
 				<div id="header_navi">
 					<div id="header_buttons"><p><a href="http://www.google.de" target="_blank">Startseite</a> | 
 					<a>Kameras</a> | <a>News</a> | <a>Kontakt</a> | <a>About</a></p></div>
-					<div id="search_field"><form name="input" action="html_form_action.asp" method="get">
-					<input id="search_display" type="text" name="Suche" value="Nikon D7000">
-					<input type="submit" value="Suchen!"></form> </div>
+					<div id="search_field">
+						<form wicket:id="myForm">
+						<input type="text" wicket:id="nameField" id="search_display" autocomplete="off"/>
+						<input type="submit" value="Suchen!"/></form> </div>
 				</div>
 			</div>
 			
@@ -41,21 +42,16 @@
 	
 		<div id="main_container_content">
 			<div id="navigation">
-				<!--  <button wicket:id="startseite_btn" class="button_class">
-					<span wicket:id="startseite_btn"></span>
-				</button>
-				<button wicket:id="news_btn" class="button_class">
-					<span wicket:id="news_btn"></span>
-				</button>
-				<button wicket:id="exit_btn" class="button_class">
-					<span wicket:id="exit_btn"></span>
-				</button> -->
 				<div id="left_buttons">
 					<ul>
-					<li><a >Nikon</a></li>
-					<li><a >Canon</a></li>
-					<li><a >Pentax</a></li>
-					<li><a >Sony</a></li>
+					<li><a ><b>Nikon</b></a></li>
+						
+						<li><span wicket:id="markupLabelNikon" class="mark">this text will be replaced</span></li>
+						
+					<li><a ><b>Canon</b></a></li>
+						<li><span wicket:id="markupLabelCanon" class="mark">will be replaced</span></li>
+					<li><a ><b>Pentax</b></a></li>
+					<li><a ><b>Sony</b></a></li>
 					</ul>
 				</div>
 	
@@ -63,18 +59,16 @@
 	
 			<div id="main_content">
 				
-					Hallo <span wicket:id="name">camera will be here</span>
-					<br/>
-					<form wicket:id="myForm">Die Kamera:
-					<input type="text" wicket:id="nameField" autocomplete="off"/>
-					<input type="submit" value="Submit"/></form>
-				
+					<span wicket:id="name">camera will be here</span>
+									
 			</div>
 	
 		</div>
 	
 	
-		<div id="main_footer"></div>
+		<div id="main_footer">
+			<div id="footer_text">2012 Copyright (c) Roy Fochtman</div>
+		</div>
 
 	</div>
 </body>
