@@ -20,11 +20,9 @@ import components.*;
 
 public class HomePage extends WebPage {
 	private static final long serialVersionUID = 1L;
-
 	
 	private final SortedSet<String> rememberedCameras = new TreeSet<String>();
 	private final KameraArray kameraArray = new KameraArray();
-	
 	
     public HomePage(final PageParameters parameters) {
 		super(parameters);
