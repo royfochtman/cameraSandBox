@@ -1,12 +1,13 @@
+html {height: 100%;}
 body, p, li, a { font-family: Myriad Pro;font-size:13pt;}
 h1, h2, h3 { font-family: Myriad Pro, arial, serif; margin-top: 0px;}
 /*colors: #30A8C0, #D8D8C0, #545454*/
-body { margin:0;padding:0;background-color: #545454;}
+body { margin:0;padding:0;background-color: #545454;height: 100%;}
 ul {list-style-type:none;margin:0;padding:0;}
 
 a:link {text-decoration:none;}    /* unvisited link */
 a:visited {text-decoration:none;} /* visited link */
-a:hover {text-decoration:underline;}   /* mouse over link */
+a:hover {text-decoration:underline;cursor: pointer; }   /* mouse over link */
 a:active {text-decoration:underline;}  /* selected link */
 
 div.wicket-aa{
@@ -35,7 +36,8 @@ div.wicket-aa ul li.selected{
 
 #main_layout{
 	width: 1000px;
-	height: 667px;
+	/*height: 100%*/
+	height: auto;
 	margin-left: auto;
     margin-right: auto;
     margin-top: 0px;
@@ -161,60 +163,64 @@ div.wicket-aa ul li.selected{
 	#icon_facebook{
 		display: inline-block;
 		margin-left: 10px;
-		height: 52px;
-		width: 52px;
+		height: 40px;
+		width: 40px;
 		background-image: url('Facebook.png');
 		background-repeat: no-repeat;
+		background-position: center center;
 		
 	}
 	#icon_facebook:hover { 
+	display: inline-block;
+	margin-left: 10px;
+	height: 40px;
+	width: 40px;
 	background-image:url('Facebook_color.png'); 
-	cursor: pointer; 
 	background-repeat: no-repeat;
+	background-position: center center;
 	}
 	
 	#icon_tumblr{
 		display: inline-block;
-		height: 52px;
-		width: 52px;
+		height: 40px;
+		width: 40px;
 		background-image: url('Tumblr.png');
 		background-repeat: no-repeat;
+		background-position: center center;
 	}
 	#icon_tumblr:hover { 
 		background-image:url('Tumblr_color.png'); 
-		cursor: pointer; 
 		display: inline-block;
-		margin-top: -15px;
-		margin-left: -15px;
-		height: 52px;
-		width: 52px;
 		background-repeat: no-repeat;
+		background-position: center center;
 	}
 	
 	#icon_twitter{
 		display: inline-block;
-		height: 52px;
-		width: 52px;
+		height: 40px;
+		width: 40px;
 		background-image: url('Twitter.png');
 		background-repeat: no-repeat;
+		background-position: center center;
 	}
 	#icon_twitter:hover { 
 		background-image:url('Twitter_color.png'); 
-		cursor: pointer; 
 		background-repeat: no-repeat;
+		background-position: center center;
 	}
 	
 	#icon_youtube{
 		display: inline-block;
-		height: 52px;
-		width: 52px;
+		height: 40px;
+		width: 40px;
 		background-image: url('Youtube.png');
 		background-repeat: no-repeat;
+		background-position: center center;
 	}
 	#icon_youtube:hover { 
 		background-image:url('Youtube_color.png'); 
-		cursor: pointer; 
 		background-repeat: no-repeat;
+		background-position: center center;
 	}
 
 #youtube_link{

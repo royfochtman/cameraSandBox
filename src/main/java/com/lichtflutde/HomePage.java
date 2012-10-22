@@ -11,7 +11,10 @@ import org.apache.wicket.extensions.ajax.markup.html.autocomplete.AutoCompleteBe
 import org.apache.wicket.extensions.ajax.markup.html.autocomplete.StringAutoCompleteRenderer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.form.SubmitLink;
 import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.markup.html.link.ExternalLink;
+import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
@@ -66,8 +69,9 @@ public class HomePage extends WebPage {
 	     */
 	    String markupLabelStringNikon = kameraArray.toButtonString("Nikon");
 	    
-	    Label markupLabelNikon = new Label("markupLabelNikon",markupLabelStringNikon);
+	    final Label markupLabelNikon = new Label("markupLabelNikon",markupLabelStringNikon);
         markupLabelNikon.setEscapeModelStrings(false);
+        markupLabelNikon.setVisible(false);
         add(markupLabelNikon);
         
         /*
@@ -75,10 +79,63 @@ public class HomePage extends WebPage {
          */
         String markupLabelStringCanon = kameraArray.toButtonString("Canon");
         
-        Label markupLabelCanon = new Label("markupLabelCanon", markupLabelStringCanon);
+        final Label markupLabelCanon = new Label("markupLabelCanon", markupLabelStringCanon);
         markupLabelCanon.setEscapeModelStrings(false);
+        markupLabelCanon.setVisible(false);
         add(markupLabelCanon);
         
+        
+        /*
+         * Buttons der Seitennavigation
+         */
+        /*
+         * Nikon
+         */
+        Link linkNikon = new Link("link_nikon"){
+        	int nikonVisibleCounter = 0;
+			@Override
+			public void onClick() {
+				// Liste der NIkon-Kameras muss hier dargestellt werden.
+				if(nikonVisibleCounter%2==0){
+					markupLabelNikon.setVisible(true);
+				}
+				else {
+					markupLabelNikon.setVisible(false);
+				}
+				nikonVisibleCounter++;
+			}
+        	
+        };
+        add(linkNikon);
+        /*
+         * Canon
+         */
+        Link linkCanon = new Link("link_canon"){
+        	int canonVisibleCounter = 0;
+			@Override
+			public void onClick() {
+				// Liste der NIkon-Kameras muss hier dargestellt werden.
+				if(canonVisibleCounter%2==0){
+					markupLabelCanon.setVisible(true);
+				}
+				else {
+					markupLabelCanon.setVisible(false);
+				}
+				canonVisibleCounter++;
+			}
+        	
+        };
+        add(linkCanon);
+        
+        
+        /*
+         * Links hinzufügen
+         */
+        
+        add(new ExternalLink("externalLink1", "http://www.facebook.com/"));
+        add(new ExternalLink("externalLink2", "https://www.tumblr.com/"));
+        add(new ExternalLink("externalLink3", "https://twitter.com/"));
+        add(new ExternalLink("externalLink4", "http://www.youtube.com/"));
         
     	
     }

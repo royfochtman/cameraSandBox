@@ -14,13 +14,17 @@
 
 	<div id="main_layout">
 		
-		<div id="main_header">
-			<div id="border_left">
+		
+		<div id="border_left">
 			
 			</div>
 			<div id="border_right">
 			
 			</div>
+	
+		
+		<div id="main_header">
+			
 			<div id="main_logo"></div>
 	
 			<div id="header_titel">
@@ -44,12 +48,12 @@
 			<div id="navigation">
 				<div id="left_buttons">
 					<ul>
-					<li><a ><b>Nikon</b></a></li>
-						
+					<li><a wicket:id="link_nikon"><b>Nikon</b></a></li>
 						<li><span wicket:id="markupLabelNikon" class="mark">this text will be replaced</span></li>
 						
-					<li><a ><b>Canon</b></a></li>
+					<li><a wicket:id="link_canon"><b>Canon</b></a></li>
 						<li><span wicket:id="markupLabelCanon" class="mark">will be replaced</span></li>
+						
 					<li><a ><b>Pentax</b></a></li>
 					<li><a ><b>Sony</b></a></li>
 					</ul>
@@ -70,10 +74,10 @@
 	
 		<div id="main_footer">
 			<div id="footer_icons">
-				<a id="icon_facebook"></a>
-				<a id="icon_tumblr"></a>
-				<a id="icon_twitter"></a>
-				<a id="icon_youtube"></a>
+				<a href="#" target="_blank" wicket:id="externalLink1" id="icon_facebook"></a>
+				<a href="#" target="_blank" wicket:id="externalLink2" id="icon_tumblr"></a>
+				<a href="#" target="_blank" wicket:id="externalLink3" id="icon_twitter"></a>
+				<a href="#" target="_blank" wicket:id="externalLink4" id="icon_youtube"></a>
 			</div>
 			<div id="footer_text">2012 Copyright (c) Roy Fochtman</div>
 		</div>
